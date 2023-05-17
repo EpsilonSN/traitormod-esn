@@ -3,15 +3,7 @@ language.Name = "English"
 
 language.TipText = "Pro Tip: "
 language.Tips = {
-    "You can use !pointshop to spawn as creatures when you are dead.",
-    "Traitors have access to a special traitor shop. Use !pointshop to open it.",
-    "You can use !traitor to get information about your traitor status.",
-    "You can use !help to get a list of all available commands.",
-    "You can use !write to write text to a logbook that spawns when you die.",
-    "Captain and security guards can never be traitors.",
-    "Ghost roles might become available when you are dead, you can use !ghostrole to claim them.",
-    "Typing !kill in chat as a ghost role simply returns it to the list of available ghost roles, rather than killing it.",
-    "Dying in the first 15 seconds as a creature refunds the price of it fully.",
+    "Join our discord! discord.gg/XwKy9snkdd"
 }
 
 language.Help = "\n!help - shows this help message\n!helptraitor - shows all traitor commands\n!helpadmin - lists all admin commands\n!traitor - show traitor information\n!pointshop - opens the point shop\n!points - show your points and lives\n!alive - list alive players (only while dead)\n!locatesub - shows you the distance and direction of the submarine, only for monsters\n!suicide - kills your character\n!version - shows running version of the traitormod\n!write - writes to your death logbook\n!roundtime - shows the current round time"
