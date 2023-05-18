@@ -139,7 +139,7 @@ category.Products = {
 
     {
         Name = "Mother's Ensemble (Armor Plated)",
-        Price = 650,
+        Price = 700,
         Limit = 1,
         IsLimitGlobal = true,
         Items = {"clownmaskunique", "clownsuitunique"},
