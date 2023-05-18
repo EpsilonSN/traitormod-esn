@@ -7,9 +7,9 @@ end
 
 category.Init = function ()
     if Traitormod.SubmarineBuilder then
-        category.StreamChalkId = Traitormod.SubmarineBuilder.AddSubmarine(Traitormod.Path .. "/Submarines/Stream Chalk.sub", "[P]Stream Chalk")
-        category.BarsukId = Traitormod.SubmarineBuilder.AddSubmarine("Content/Submarines/Barsuk.sub", "[P]Barsuk")
-        category.VentureId = Traitormod.SubmarineBuilder.AddSubmarine("Content/Submarines/Venture.sub", "[P]Barsuk")
+        category.StreamChalkId = Traitormod.SubmarineBuilder.AddSubmarine(Traitormod.Path .. "/Submarines/Stream Chalk.sub", "(Shop) Stream Chalk")
+        category.BarsukId = Traitormod.SubmarineBuilder.AddSubmarine("Content/Submarines/Barsuk.sub", "(Shop) Barsuk")
+        category.VentureId = Traitormod.SubmarineBuilder.AddSubmarine("Content/Submarines/Venture.sub", "(Shop) Venture")
     end
 end
 
