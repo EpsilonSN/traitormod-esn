@@ -99,7 +99,7 @@ category.Init = function ()
         end
     end)
 
-    [[
+    --[[
         Hook.Add("meleeWeapon.handleImpact",  "Cultist.Stinger", function (melee, target)
             if melee.Item.Prefab.Identifier ~= "huskstinger" then return end
             if not LuaUserData.IsTargetType(target.UserData, "Barotrauma.Limb") then return end
@@ -117,7 +117,7 @@ category.Init = function ()
                 end
             end
         end)
-    ]]
+    --]]
 end
 
 category.Products = {
@@ -315,7 +315,7 @@ category.Products = {
         IsLimitGlobal = false,
         Items = {"detonator"},
     },
-[[
+--[[
     {
         Name = "Call Clown Army",
         Price = 10000,
@@ -330,7 +330,7 @@ category.Products = {
             Traitormod.RoundEvents.TriggerEvent("ClownArmy")
         end
     },
-]]
+--]]
 }
 
 return category
