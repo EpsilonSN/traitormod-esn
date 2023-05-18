@@ -235,6 +235,7 @@ category.Products = {
             local affliction = AfflictionPrefab.Prefabs["deliriuminepoisoning"].Instantiate(35)
             local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(10)
             local afflictionPressure = AfflictionPrefab.Prefabs["pressurestabilized"].Instantiate(290)
+            local afflictionVigor = AfflictionPrefab.Prefabs["vigor"].Instantiate(350)
             character.CanSpeak = false
             character.TeamID = CharacterTeamType.None
             character.GiveTalent("psychoclown", true)
@@ -242,6 +243,7 @@ category.Products = {
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, affliction)
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, afflictionInsane)
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, afflictionPressure)
+            character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, afflictionVigor)
             character.GiveJobItems(nil)
 
             local oldClothes = character.Inventory.GetItemInLimbSlot(InvSlotType.InnerClothes)
@@ -250,7 +252,7 @@ category.Products = {
             local oldHat = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
             if oldHat then oldHat.Drop() Entity.Spawner.AddEntityToRemoveQueue(oldHat) end
             
-            for item in self.Character.Inventory.AllItems do
+            for item in character.Inventory.AllItems do
                if item.Prefab.Identifier == "stunbaton" or item.Prefab.Identifier == "handcuffs" or item.Prefab.Identifier == "divingknife" then
                    Entity.Spawner.AddEntityToRemoveQueue(item)
                end
