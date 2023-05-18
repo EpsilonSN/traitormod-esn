@@ -1,7 +1,7 @@
 local category = {}
 
 category.Name = "Cultist"
-category.Decoration = "cultist"
+category.Decoration = "Ecclesiast"
 category.FadeToBlack = true
 
 category.CanAccess = function(client)
@@ -261,6 +261,14 @@ category.Products = {
         Limit = 1,
         IsLimitGlobal = false,
         Items = {"skillbookeuropanmedicine"},
+    },
+
+    {
+        Name = "Cultist Robes",
+        Price = 650,
+        Limit = 1,
+        IsLimitGlobal = false,
+        Items = {"cultistrobes"},
     },
 
     {

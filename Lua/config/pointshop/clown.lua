@@ -1,7 +1,7 @@
 local category = {}
 
 category.Name = "Clown"
-category.Decoration = "cultist"
+category.Decoration = "Jestmaster"
 category.FadeToBlack = true
 
 category.CanAccess = function(client)
@@ -173,9 +173,9 @@ category.Products = {
 
     {
         Name = "Clown Auto-Injector",
-        Price = 800,
+        Price = 4000,
         Limit = 1,
-        IsLimitGlobal = false,
+        IsLimitGlobal = true,
         Action = function (client)
             local prefabInjector = ItemPrefab.GetItemPrefab("autoinjectorheadset")
             local prefabC4 = ItemPrefab.GetItemPrefab("c4block")
