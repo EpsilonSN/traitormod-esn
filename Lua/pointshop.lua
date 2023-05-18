@@ -375,7 +375,7 @@ ps.TrackRefund = function (client, product)
     ps.Refunds[client] = { Product = product, Time = Timer.GetTime() }
 end
 
-Traitormod.AddCommand({"!pointshop", "!pointsshop", "!ps"}, function (client, args)
+Traitormod.AddCommand({"!pointshop", "!pointsshop", "!ps", "!shop", "!sans"}, function (client, args)
     if not ps.ValidateClient(client) then
         return true
     end
