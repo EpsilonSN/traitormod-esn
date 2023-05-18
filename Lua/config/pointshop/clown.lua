@@ -19,7 +19,7 @@ category.Init = function ()
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-50.0" setvalue="true"/>
       <Attack targetimpulse="2">
-        <Affliction identifier="incrementalstun" strength="65" />
+        <Affliction identifier="stun" strength="22" />
       </Attack>
       <StatusEffect type="OnUse" forceplaysounds="true">
         <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit1.ogg" range="800" selectionmode="Random"/>
