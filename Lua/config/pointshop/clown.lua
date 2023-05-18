@@ -236,7 +236,7 @@ category.Products = {
             local affliction = AfflictionPrefab.Prefabs["deliriuminepoisoning"].Instantiate(35)
             local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(15)
             character.CanSpeak = false
-            character.TeamID = CharacterTeamType.Team2
+            character.TeamID = CharacterTeamType.Team1
             character.GiveJobItems(nil)
             character.GiveTalent("psychoclown", true)
             character.GiveTalent("enrollintoclowncollege", true)
