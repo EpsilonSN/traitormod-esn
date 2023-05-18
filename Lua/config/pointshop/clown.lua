@@ -11,7 +11,7 @@ end
 category.Init = function ()
     local replacement = [[
     <overwrite>
-      <StatusEffect type="OnUse" target="UseTarget" delay="2" comparison="Or">
+      <StatusEffect type="OnUse" target="UseTarget" delay="1" comparison="Or">
         <Conditional speciesname="latcher"/>
         <Conditional speciesname="endworm"/>
         <Conditional speciesname="charybdis"/>
@@ -19,7 +19,7 @@ category.Init = function ()
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-50.0" setvalue="true"/>
       <Attack targetimpulse="2">
-        <Affliction identifier="stun" strength="15" />
+        <Affliction identifier="stun" strength="20" />
       </Attack>
       <StatusEffect type="OnUse" forceplaysounds="true">
         <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit1.ogg" range="800" selectionmode="Random"/>
@@ -248,6 +248,22 @@ category.Products = {
 
             local oldHat = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
             if oldHat then oldHat.Drop() Entity.Spawner.AddEntityToRemoveQueue(oldHat) end
+            
+            Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("idcard"), character.Inventory, nil, nil, function (item)
+                character.Inventory.TryPutItem(item, character.Inventory.FindLimbSlot(InvSlotType.Card), true, false, character)
+                item.NonPlayerTeamInteractable = true
+                local prop = item.SerializableProperties[Identifier("NonPlayerTeamInteractable")]
+                Networking.CreateEntityEvent(item, Item.ChangePropertyEventData(prop, item))
+            end)
+        
+            local idCard = character.Inventory.GetItemInLimbSlot(InvSlotType.Card)
+            if idCard then
+                idCard.NonPlayerTeamInteractable = true
+                idCard.AddTag("name: "..info.Name)
+                idCard.AddTag("job: clown")
+                local prop = idCard.SerializableProperties[Identifier("NonPlayerTeamInteractable")]
+                Networking.CreateEntityEvent(idCard, Item.ChangePropertyEventData(prop, idCard))
+            end
         
             local idCard = character.Inventory.GetItemInLimbSlot(InvSlotType.Card)
             if idCard then
