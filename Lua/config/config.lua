@@ -301,6 +301,7 @@ config.PointShopConfig = {
     DeathTimeoutTime = 100,
     ItemCategories = {
         dofile(Traitormod.Path .. "/Lua/config/pointshop/cultist.lua"),
+        dofile(Traitormod.Path .. "/Lua/config/pointshop/clown.lua"),
         dofile(Traitormod.Path .. "/Lua/config/pointshop/traitor.lua"),
         dofile(Traitormod.Path .. "/Lua/config/pointshop/security.lua"),
         dofile(Traitormod.Path .. "/Lua/config/pointshop/maintenance.lua"),
