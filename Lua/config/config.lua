@@ -56,9 +56,9 @@ config.ExperienceTimer = 200
 config.PointsGainedFromSkill = {
     medical = 5,
     weapons = 5,
-    mechanical = 3,
-    electrical = 3,
-    helm = 2,
+    mechanical = 4,
+    electrical = 4,
+    helm = 3,
 }
 
 config.PointsLostAfterNoLives = function (x)
