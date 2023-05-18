@@ -89,6 +89,7 @@ language.ObjectiveStealCaptainID = "Steal the captain's ID."
 language.ObjectiveKidnap = "Handcuff %s for %s seconds."
 language.ObjectivePoisonCaptain = "Poison %s with %s."
 language.ObjectiveWreckGift = "Grab the gift"
+language.ObjectiveConvert = "Put a clown mask on %s, then eliminate him."
 
 language.ObjectiveText = "Assassinate the crew in order to complete your mission."
 
@@ -96,6 +97,14 @@ language.AssassinationNextTarget = "Stay low until further instructions."
 language.AssassinationNewObjective = "Your next assassination target is %s."
 language.HuskNewObjective = "Your next husk target is %s."
 language.AssassinationEveryoneDead = "Good job agent, you did it!"
+
+language.AssassinationNextTarget = "Stay low until further instructions."
+language.AssassinationNewObjective = "Your next assassination target is %s."
+language.HuskNewObjective = "Your next husk target is %s."
+
+language.ClownConvertNextTarget = "Wait until the Honkmother bestows orders."
+language.ClownConvertNewObjective = "Your next clown mask target is %s."
+language.ConvertEveryoneDead = "The honkmother is pleased."
 
 language.ItemsBought = "Items bought from point shop"
 language.CrewBoughtItem = "Players bought items from point shop"

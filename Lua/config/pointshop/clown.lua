@@ -123,15 +123,15 @@ end
 category.Products = {
     {
         Name = "Clown Mask",
-        Price = 50,
-        Limit = 5,
+        Price = 100,
+        Limit = 15,
         IsLimitGlobal = false,
         Items = {"clownmask"},
     },
 
     {
         Name = "Clown Ensemble",
-        Price = 200,
+        Price = 250,
         Limit = 1,
         IsLimitGlobal = false,
         Items = {"clownmask", "clowncostume"},

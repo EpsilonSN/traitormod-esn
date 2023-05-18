@@ -111,8 +111,9 @@ config.GamemodeConfig = {
 
         TraitorTypeSelectionMode = "Vote", -- Vote | Random
         TraitorTypeChance = {
-            Traitor = 50, -- Traitors have 50% chance of being a normal traitor
-            Cultist = 50,
+            Traitor = 34, -- Traitors have 34% chance of being a normal traitor
+            Cultist = 33,
+            Clown = 33,
         },
 
         AmountTraitors = function (amountPlayers)
@@ -209,6 +210,27 @@ config.RoleConfig = {
         SelectPiratesAsTargets = false,
         SelectUniqueTargets = true,     -- every traitor target can only be chosen once per traitor (respawn+false -> no end)
         PointsPerAssassination = 100,
+    },
+
+    Clown = {
+        SubObjectives = {"Survive", "Kidnap", "DrunkSailor", "Assassinate", "DestroyWeapons"},
+        MinSubObjectives = 3,
+        MaxSubObjectives = 4,
+
+        NextObjectiveDelayMin = 25,
+        NextObjectiveDelayMax = 85,
+
+        TraitorBroadcast = true,           -- traitors can broadcast to other traitors using !tc
+        TraitorBroadcastHearable = false,  -- if true, !tc will be hearable in the vicinity via local chat
+        TraitorDm = true,                  -- traitors can send direct messages to other players using !tdm
+
+        -- Names, Codewords, None
+        TraitorMethodCommunication = "Names",
+
+        SelectBotsAsTargets = true,
+        SelectPiratesAsTargets = false,
+        SelectUniqueTargets = true,     -- every traitor target can only be chosen once per traitor (respawn+false -> no end)
+        PointsPerAssassination = 150,
     },
 }
 
