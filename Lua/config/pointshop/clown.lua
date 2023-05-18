@@ -235,6 +235,7 @@ category.Products = {
             local character = Character.Create(info, client.Character.WorldPosition, info.Name, 0, false, true)
             local affliction = AfflictionPrefab.Prefabs["deliriuminepoisoning"].Instantiate(35)
             local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(15)
+            character.IsImmuneToPressure = true
             character.CanSpeak = false
             character.TeamID = CharacterTeamType.Team1
             character.GiveJobItems(nil)
