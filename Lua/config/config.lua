@@ -82,7 +82,7 @@ config.GamemodeConfig = {
     Secret = {
         EndOnComplete = true,           -- end round everyone but traitors are dead
         EnableRandomEvents = true,
-        EndGameDelaySeconds = 10,
+        EndGameDelaySeconds = 5,
 
         TraitorSelectDelayMin = 90,
         TraitorSelectDelayMax = 175,
