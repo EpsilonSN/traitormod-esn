@@ -494,6 +494,6 @@ end
 
 Traitormod.SendWelcome = function(client)
     if Traitormod.Config.SendWelcomeMessage or Traitormod.Config.SendWelcomeMessage == nil then
-        Game.SendDirectChatMessage("", "| ESN Traitor Mod v" .. Traitormod.VERSION .. "Check out our discord! |\n" .. Traitormod.GetDataInfo(client), nil, ChatMessageType.Server, client)
+        Game.SendDirectChatMessage("", "| ESN Traitor Mod v" .. Traitormod.VERSION .. " Check out our discord! |\n" .. Traitormod.GetDataInfo(client), nil, ChatMessageType.Server, client)
     end
 end
