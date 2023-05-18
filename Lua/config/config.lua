@@ -10,6 +10,7 @@ config.Extensions = {
     dofile(Traitormod.Path .. "/Lua/extensions/weaponnerfs.lua"),
     --dofile(Traitormod.Path .. "/Lua/extensions/paralysisnerf.lua"),
     dofile(Traitormod.Path .. "/Lua/extensions/pressuremidjoin.lua"),
+    dofile(Traitormod.Path .. "/Lua/extensions/alivecrewmenuremover.lua"),
 }
 
 ----- GAMEPLAY -----
@@ -33,7 +34,7 @@ config.DeathLogBook = true
 -- Warning: Only respawn shuttles will be used, the option to spawn people directly into the submarine doesnt work.
 config.OverrideRespawnSubmarine = true
 config.RespawnSubmarineFile = "Content/Submarines/Selkie.sub"
-config.RespawnText = "Separatist agents incoming. %s seconds."
+config.RespawnText = "Separatist agents incoming. ETA in %s seconds."
 config.RespawnTeam = CharacterTeamType.Team1
 config.RespawnOnKillPoints = 500
 
@@ -45,8 +46,8 @@ config.PermanentPoints = true      -- sets if points and lives will be stored in
 config.RemotePoints = nil
 config.RemoteServerAuth = {}
 config.PermanentStatistics = true  -- sets if statistics be stored in and loaded from a file
-config.MaxLives = 8
-config.MinRoundTimeToLooseLives = 180
+config.MaxLives = 5
+config.MinRoundTimeToLooseLives = 210
 config.RespawnedPlayersDontLooseLives = true
 config.MaxExperienceFromPoints = 100000     -- if not nil, this amount is the maximum experience players gain from stored points (30k = lvl 10 | 38400 = lvl 12)
 
