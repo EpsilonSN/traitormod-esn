@@ -19,7 +19,7 @@ category.Init = function ()
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-50.0" setvalue="true"/>
       <Attack targetimpulse="2">
-        <Affliction identifier="stun" strength="20" />
+        <Affliction identifier="stun" strength="25" />
       </Attack>
       <StatusEffect type="OnUse" forceplaysounds="true">
         <Sound type="OnUse" file="Content/Items/Weapons/ToyHammerHit1.ogg" range="800" selectionmode="Random"/>
@@ -138,7 +138,7 @@ category.Products = {
     },
 
     {
-        Name = "Mother's Ensemble",
+        Name = "Mother's Ensemble (Armor Plated)",
         Price = 650,
         Limit = 1,
         IsLimitGlobal = true,
@@ -165,8 +165,8 @@ category.Products = {
 
     {
         Name = "Toy Hammer (Buffed)",
-        Price = 500,
-        Limit = 1,
+        Price = 550,
+        Limit = 2,
         IsLimitGlobal = false,
         Items = {"toyhammer"},
     },
@@ -318,7 +318,7 @@ category.Products = {
 
     {
         Name = "Chloral Hydrate (x3)",
-        Price = 400,
+        Price = 350,
         Limit = 3,
         IsLimitGlobal = false,
         Items = {"chloralhydrate", "chloralhydrate", "chloralhydrate"},
