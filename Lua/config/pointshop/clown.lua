@@ -193,18 +193,14 @@ category.Products = {
                     Networking.CreateEntityEvent(item2, Item.ChangePropertyEventData(color, item2))
                     local invColor = item2.SerializableProperties[Identifier("InventoryIconColor")]
                     Networking.CreateEntityEvent(item2, Item.ChangePropertyEventData(invColor, item2))
-
-                    item2.NonPlayerTeamInteractable = true
-                    local prop = item2.SerializableProperties[Identifier("NonPlayerTeamInteractable")]
-                    Networking.CreateEntityEvent(item2, Item.ChangePropertyEventData(prop, item2))
                 end)
             end)
         end
     },
 
     {
-        Name = "Summon Clown",
-        Price = 900,
+        Name = "Summon Insane Clown",
+        Price = 1100,
         Limit = 1,
         IsLimitGlobal = true,
         Action = function (client, product, items)
@@ -235,8 +231,8 @@ category.Products = {
         
             local character = Character.Create(info, client.Character.WorldPosition, info.Name, 0, false, true)
             local affliction = AfflictionPrefab.Prefabs["deliriuminepoisoning"].Instantiate(35)
-            local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(15)
-            character.IsImmuneToPressure = true
+            local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(10)
+            local afflictionPressure = AfflictionPrefab.Prefabs["pressurestabilized"].Instantiate(275)
             character.CanSpeak = false
             character.TeamID = CharacterTeamType.None
             character.GiveJobItems(nil)
@@ -244,6 +240,7 @@ category.Products = {
             character.GiveTalent("enrollintoclowncollege", true)
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, affliction)
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, afflictionInsane)
+            character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, afflictionPressure)
 
             local oldClothes = character.Inventory.GetItemInLimbSlot(InvSlotType.InnerClothes)
             if oldClothes then oldClothes.Drop() Entity.Spawner.AddEntityToRemoveQueue(oldClothes) end
