@@ -173,7 +173,7 @@ category.Products = {
 
     {
         Name = "Clown Auto-Injector",
-        Price = 4000,
+        Price = 3950,
         Limit = 1,
         IsLimitGlobal = true,
         Action = function (client)
@@ -181,7 +181,8 @@ category.Products = {
             local prefabC4 = ItemPrefab.GetItemPrefab("c4block")
             Entity.Spawner.AddItemToSpawnQueue(prefabInjector, client.Character.Inventory, nil, nil, function (item)
                 item.Description = "Praise the honkmother. Has a surprise inside."
-                Entity.Spawner.AddItemToSpawnQueue(prefabC4, item.OwnInventory, nil, nil, function (item2)
+                Entity.Spawner.AddItemToSpawnQueue(prefabC4, client.Character.Inventory, nil, nil, function (item2)
+                    item.OwnInventory.TryPutItem(item2, 1, false, false, client.Character, true, false)
                     item2.Description = "Praise the honkmother."
                     item2.set_InventoryIconColor(Color(255, 5, 10))
                     item2.SpriteColor = Color(255, 5, 10, 255)
@@ -203,7 +204,7 @@ category.Products = {
 
     {
         Name = "Summon Clown",
-        Price = 750,
+        Price = 900,
         Limit = 1,
         IsLimitGlobal = true,
         Action = function (client, product, items)
