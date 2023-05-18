@@ -291,6 +291,9 @@ category.Products = {
                 local prop = item.SerializableProperties[Identifier("NonPlayerTeamInteractable")]
                 Networking.CreateEntityEvent(item, Item.ChangePropertyEventData(prop, item))
             end)
+           
+            Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("divingknife"), character.Inventory, nil, nil, function (item)  end)
+            Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("divingknife"), character.Inventory, nil, nil, function (item)  end)
 
             Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("bikehorn"), character.Inventory, nil, nil, function (item)
                 item.NonPlayerTeamInteractable = true
