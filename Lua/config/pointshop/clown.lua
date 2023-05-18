@@ -223,24 +223,26 @@ category.Products = {
                 "Balloon Man",
                 "The Grandest of Jesters",
                 "Grandmaster Clown",
-                "Killer"
+                "Killer",
+                "Hunter",
+                "Buddy the Clown"
             }
 
             info.Name = possibleNames[math.random(1, #possibleNames)]
-            info.Job = Job(JobPrefab.Get("killer"))
+            info.Job = Job(JobPrefab.Get("securityofficer"))
         
             local character = Character.Create(info, client.Character.WorldPosition, info.Name, 0, false, true)
             local affliction = AfflictionPrefab.Prefabs["deliriuminepoisoning"].Instantiate(35)
             local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(10)
-            local afflictionPressure = AfflictionPrefab.Prefabs["pressurestabilized"].Instantiate(275)
+            local afflictionPressure = AfflictionPrefab.Prefabs["pressurestabilized"].Instantiate(290)
             character.CanSpeak = false
             character.TeamID = CharacterTeamType.None
-            character.GiveJobItems(nil)
             character.GiveTalent("psychoclown", true)
             character.GiveTalent("enrollintoclowncollege", true)
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, affliction)
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, afflictionInsane)
             character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, afflictionPressure)
+            character.GiveJobItems(nil)
 
             local oldClothes = character.Inventory.GetItemInLimbSlot(InvSlotType.InnerClothes)
             if oldClothes then oldClothes.Drop() Entity.Spawner.AddEntityToRemoveQueue(oldClothes) end
@@ -248,13 +250,12 @@ category.Products = {
             local oldHat = character.Inventory.GetItemInLimbSlot(InvSlotType.Head)
             if oldHat then oldHat.Drop() Entity.Spawner.AddEntityToRemoveQueue(oldHat) end
             
-            Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.GetItemPrefab("idcard"), character.Inventory, nil, nil, function (item)
-                character.Inventory.TryPutItem(item, character.Inventory.FindLimbSlot(InvSlotType.Card), true, false, character)
-                item.NonPlayerTeamInteractable = true
-                local prop = item.SerializableProperties[Identifier("NonPlayerTeamInteractable")]
-                Networking.CreateEntityEvent(item, Item.ChangePropertyEventData(prop, item))
-            end)
-        
+            for item in self.Character.Inventory.AllItems do
+               if item.Prefab.Identifier == "stunbaton" or item.Prefab.Identifier == "handcuffs" or item.Prefab.Identifier == "divingknife" then
+                   Entity.Spawner.AddEntityToRemoveQueue(item)
+               end
+            end
+            
             local idCard = character.Inventory.GetItemInLimbSlot(InvSlotType.Card)
             if idCard then
                 idCard.NonPlayerTeamInteractable = true
