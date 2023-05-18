@@ -237,7 +237,7 @@ category.Products = {
             local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(15)
             character.IsImmuneToPressure = true
             character.CanSpeak = false
-            character.TeamID = CharacterTeamType.Team1
+            character.TeamID = CharacterTeamType.None
             character.GiveJobItems(nil)
             character.GiveTalent("psychoclown", true)
             character.GiveTalent("enrollintoclowncollege", true)
@@ -262,6 +262,7 @@ category.Products = {
                 idCard.NonPlayerTeamInteractable = true
                 idCard.AddTag("name: "..info.Name)
                 idCard.AddTag("job: clown")
+                idCard.Description = "This belongs to "..info.Name.." the clown. Allows limited access to areas of the sub."
                 local prop = idCard.SerializableProperties[Identifier("NonPlayerTeamInteractable")]
                 Networking.CreateEntityEvent(idCard, Item.ChangePropertyEventData(prop, idCard))
             end
