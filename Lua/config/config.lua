@@ -289,6 +289,7 @@ config.PointShopConfig = {
         dofile(Traitormod.Path .. "/Lua/config/pointshop/experimental.lua"),
         dofile(Traitormod.Path .. "/Lua/config/pointshop/deathspawn.lua"),
         dofile(Traitormod.Path .. "/Lua/config/pointshop/ships.lua"),
+        dofile(Traitormod.Path .. "/Lua/config/pointshop/advert.lua"),
     }
 }
 
