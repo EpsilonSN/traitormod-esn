@@ -154,12 +154,44 @@ category.Products = {
     },
 
     {
+        Name = "Mutated Pomegrenade",
+        Price = 500,
+        Limit = 3,
+        IsLimitGlobal = false,
+        Items = {"badcreepingorange"},
+    },
+
+    {
+        Name = "Banana Peel",
+        Price = 15,
+        Limit = 50,
+        Items = {"bananapeel"}
+    },
+
+    {
+        Name = "Deliriumine",
+        Price = 475,
+        Limit = 3,
+        Items = {"deliriumine"}
+    },
+
+    {
         Name = "Enroll into Clown College",
-        Price = 750,
+        Price = 500,
         Limit = 1,
         IsLimitGlobal = false,
         Action = function (client, product, items)
             client.Character.GiveTalent("enrollintoclowncollege")
+        end
+    },
+
+    {
+        Name = "Psycho Clown",
+        Price = 600,
+        Limit = 1,
+        IsLimitGlobal = false,
+        Action = function (client, product, items)
+            client.Character.GiveTalent("psychoclown")
         end
     },
 
@@ -200,14 +232,27 @@ category.Products = {
 
     {
         Name = "Summon Insane Clown",
-<<<<<<< Updated upstream
         Price = 1100,
-=======
-        Price = 750,
->>>>>>> Stashed changes
+
         Limit = 1,
         IsLimitGlobal = true,
         Action = function (client, product, items)
+            local characters = {}
+            local positions = {}
+        
+            for key, value in pairs(Character.CharacterList) do
+                if value.Submarine == Submarine.MainSub then
+                    table.insert(characters, value)
+                    table.insert(positions, value.WorldPosition)
+                end
+            end
+        
+            if #characters == 0 then return end
+        
+            for key, value in pairs(characters) do
+                value.TeleportTo(positions[math.random(#positions)])
+            end
+
             local info = CharacterInfo(Identifier("human"))
             local possibleNames = {
                 "Jestmaster",
@@ -235,7 +280,7 @@ category.Products = {
             info.Name = possibleNames[math.random(1, #possibleNames)]
             info.Job = Job(JobPrefab.Get("securityofficer"))
         
-            local character = Character.Create(info, client.Character.WorldPosition, info.Name, 0, false, true)
+            local character = Character.Create(info, positions[math.random(#positions)], info.Name, 0, false, true)
             local affliction = AfflictionPrefab.Prefabs["deliriuminepoisoning"].Instantiate(35)
             local afflictionInsane = AfflictionPrefab.Prefabs["psychosis"].Instantiate(10)
             local afflictionPressure = AfflictionPrefab.Prefabs["pressurestabilized"].Instantiate(290)
@@ -335,11 +380,86 @@ category.Products = {
     },
 
     {
+        Name = "Mudraptor Egg",
+        Price = 250,
+        Limit = 10,
+        Items = {"smallmudraptoregg", "saline", "saline"}
+    },
+
+    {
+        Name = "Funbringer 3000",
+        Price = 2000,
+        Limit = 1,
+        IsLimitGlobal = true,
+        Action = function (client)
+            local clownExosuit = ItemPrefab.GetItemPrefab("clownexosuit")
+            Entity.Spawner.AddItemToSpawnQueue(clownExosuit, client.Character.Inventory, nil, nil, function (item)
+                local items = {"fuelrod", "oxygentank"}
+
+                for key, value in pairs(items) do
+                    Entity.Spawner.AddItemToSpawnQueue(ItemPrefab.Prefabs[value], item.OwnInventory)
+                end
+            end)
+        end
+    },
+
+    {
+        Name = "Cymbals",
+        Price = 600,
+        Limit = 2,
+        Items = {"cymbals"}
+    },
+
+    {
+        Name = "Pressure Stabilizer",
+        Price = 850,
+        Limit = 1,
+        Items = {"pressurestabilizer"}
+    },
+
+    {
+        Name = "Rum",
+        Price = 500,
+        Limit = 4,
+        Items = {"rum"}
+    },
+
+    {
         Name = "Detonator",
         Price = 950,
         Limit = 3,
         IsLimitGlobal = false,
         Items = {"detonator"},
+    },
+
+    {
+        Name = "Clown Magic (Randomly swaps places of people)",
+        Price = 900,
+        Limit = 2,
+        IsLimitGlobal = true,
+
+        CanBuy = function (client, product)
+            return not Traitormod.RoundEvents.IsEventActive("ClownMagic")
+        end,
+
+        Action = function ()
+            Traitormod.RoundEvents.TriggerEvent("ClownMagic")
+        end
+    },
+
+    {
+        Name = "Randomize Lights",
+        Price = 350,
+        Limit = 2,
+        IsLimitGlobal = true,
+
+        CanBuy = function (client, product)
+            return not Traitormod.RoundEvents.IsEventActive("RandomLights")
+        end,
+
+        Action = function ()
+            Traitormod.RoundEvents.TriggerEvent("RandomLights")
+        end
     },
 --[[
     {

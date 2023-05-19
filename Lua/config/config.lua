@@ -169,7 +169,7 @@ config.RoleConfig = {
     },
 
     Cultist = {
-        SubObjectives = {"Assassinate", "Kidnap", "TurnHusk", "DestroyCaly"},
+        SubObjectives = {"Assassinate", "Kidnap", "TurnHusk", "DestroyCaly", "SuffocateCrew"},
         MinSubObjectives = 2,
         MaxSubObjectives = 3,
 
@@ -192,7 +192,7 @@ config.RoleConfig = {
     },
 
     Traitor = {
-        SubObjectives = {"StealCaptainID", "Survive", "Kidnap", "PoisonCaptain"},
+        SubObjectives = {"StealCaptainID", "Survive", "Kidnap", "PoisonCaptain", "SuffocateCrew"},
         MinSubObjectives = 2,
         MaxSubObjectives = 3,
 
@@ -213,7 +213,7 @@ config.RoleConfig = {
     },
 
     Clown = {
-        SubObjectives = {"Survive", "Kidnap", "DrunkSailor", "Assassinate", "DestroyWeapons"},
+        SubObjectives = {"Survive", "AssassinatePressure", "DrunkSailor", "GrowMudraptors", "DestroyWeapons", "SuffocateCrew", "BananaSlip"},
         MinSubObjectives = 3,
         MaxSubObjectives = 4,
 
@@ -293,6 +293,8 @@ config.RandomEventConfig = {
         dofile(Traitormod.Path .. "/Lua/config/randomevents/oxygengenpoison.lua"),
         dofile(Traitormod.Path .. "/Lua/config/randomevents/oxygengenhusk.lua"),
         dofile(Traitormod.Path .. "/Lua/config/randomevents/prisoner.lua"),
+        dofile(Traitormod.Path .. "/Lua/config/randomevents/randomlights.lua"),
+        dofile(Traitormod.Path .. "/Lua/config/randomevents/clownmagic.lua"),
     }
 }
 
