@@ -200,7 +200,11 @@ category.Products = {
 
     {
         Name = "Summon Insane Clown",
+<<<<<<< Updated upstream
         Price = 1100,
+=======
+        Price = 750,
+>>>>>>> Stashed changes
         Limit = 1,
         IsLimitGlobal = true,
         Action = function (client, product, items)
