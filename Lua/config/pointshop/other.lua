@@ -57,7 +57,7 @@ category.Products = {
 
     {
         Name = "Banana",
-        Price = 10,
+        Price = 65,
         Limit = 50,
         Items = {"banana"}
     },
