@@ -247,11 +247,7 @@ category.Products = {
                 end
             end
         
-            if #characters == 0 then return end
-        
-            for key, value in pairs(characters) do
-                value.TeleportTo(positions[math.random(#positions)])
-            end
+            if #characters == 0 then positions = {client.Character.WorldPosition} end
 
             local info = CharacterInfo(Identifier("human"))
             local possibleNames = {
