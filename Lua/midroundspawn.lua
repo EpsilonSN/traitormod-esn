@@ -101,7 +101,7 @@ m.TryCreateClientCharacter = function(submarine, client)
     Timer.Wait(function () 
         -- spawn character
         local char = Character.Create(client.CharacterInfo, waypoint.WorldPosition, client.CharacterInfo.Name, 0, true, true)
-        char.TeamID = submarine.TeamID
+        char.TeamID = CharacterTeamType.FriendlyNPC
         crewManager.AddCharacter(char)
 
         client.SetClientCharacter(char)
