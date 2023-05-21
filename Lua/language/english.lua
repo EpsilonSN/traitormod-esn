@@ -1,7 +1,7 @@
 local language = {}
 language.Name = "English"
 
-language.TipText = ""
+language.TipText = "Pro Tip: "
 language.Tips = {
     "Join our discord! discord.gg/XwKy9snkdd"
 }
