@@ -69,6 +69,39 @@ Traitormod.AddCommand({"!roles", "!traitors"}, function (client, args)
     return true
 end)
 
+Traitormod.AddCommand("!announce", function(client, args)
+    local feedback = nil
+
+    if client.Character == nil or client.Character.IsDead or not client.Character.IsHuman then
+        feedback = "You're dead."
+        Game.SendDirectChatMessage("", feedback, nil, Traitormod.Config.ChatMessageType, client)
+    return true end
+
+    for item in client.Character.Inventory.AllItems do
+        if #args > 0 and item.Prefab.Identifier == "idcard" and item.GetComponentString("IdCard").OwnerJobId == "captain" and client.Character.TeamID ~= CharacterTeamType.Team2 then
+            local msg = ""
+            for word in args do
+                msg = msg .. " " .. word
+            end
+
+            Traitormod.RoundEvents.SendEventMessage("Warden's Announcement: "..msg, "GameModeIcon.sandbox", Color.LightBlue)
+            return true
+        elseif client.Character and client.Character.TeamID == CharacterTeamType.Team2 and #args > 0 then
+            local msg = ""
+            for word in args do
+                msg = msg .. " " .. word
+            end
+                
+            Traitormod.RoundEvents.SendEventMessage("Separatist Transmission: "..msg, "GameModeIcon.sandbox", Color.Khaki)
+            return true
+        else
+            feedback = "You don't have the warden's ID."
+            Game.SendDirectChatMessage("", feedback, nil, Traitormod.Config.ChatMessageType, client)
+            return true
+        end
+    end
+end)
+
 Traitormod.AddCommand("!traitoralive", function (client, args)
     if not client.HasPermission(ClientPermissions.ConsoleCommands) then return end
 
@@ -526,6 +559,25 @@ Traitormod.AddCommand("!assignrole", function (client, args)
     Traitormod.SendMessage(client, "Assigned " .. target.Name .. " the role " .. role.Name .. ".")
 
     return true
+end)
+
+
+Traitormod.AddCommand("!intercom", function(client, args)
+    if not client.HasPermission(ClientPermissions.ConsoleCommands) then return end
+
+    if #args > 0 then
+        local msg = ""
+        for word in args do
+            msg = msg .. " " .. word
+        end
+
+        Traitormod.RoundEvents.SendEventMessage(msg, "GameModeIcon.sandbox", Color.LightBlue)
+        return true
+    else
+        feedback = "You didn't provide a message."
+        Game.SendDirectChatMessage("", feedback, nil, Traitormod.Config.ChatMessageType, client)
+        return true
+    end
 end)
 
 Traitormod.AddCommand("!triggerevent", function (client, args)
