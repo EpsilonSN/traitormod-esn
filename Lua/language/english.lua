@@ -13,6 +13,9 @@ language.Tips = {
     "If you die, type !shop or !pointshop to respawn as a creature.",
     "Typing !kill in chat as a ghost role simply returns it to the list of available ghost roles, rather than killing it.",
     "Type !help for a list of commands.",
+    "You can use !write to write text to a logbook that spawns when you die.",
+    "You can use !role to get information about your current role status.",
+    "Type !droppoints to give other players points. This can be useful for trading items to others."
 }
 
 language.Help = "\n!help - shows this help message\n!helptraitor - shows all traitor commands\n!helpadmin - lists all admin commands\n!traitor - show traitor information\n!pointshop - opens the point shop\n!points - show your points and lives\n!droppoints - gives you a logbook which you can give to others to give points\n!alive - list alive players (only while dead)\n!locatesub - shows you the distance and direction of the submarine, only for monsters\n!suicide - kills your character\n!version - shows running version of the traitormod\n!write - writes to your death logbook\n!roundtime - shows the current round time"
